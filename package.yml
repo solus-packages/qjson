@@ -1,0 +1,19 @@
+name       : qjson
+version    : 0.8.1
+release    : 1
+source     :
+    - https://github.com/flavio/qjson/archive/0.8.1.tar.gz : 920c94166cb91b1cf11c7d2745bdbcc8c0ea82411ca7b3732ce0b00ee2d56e98
+license    : LGPL-2.1
+summary    : A qt-based library that maps JSON data to QVariant objects
+description: |
+    A qt-based library that maps JSON data to QVariant objects
+builddeps  :
+    - pkgconfig(QtGui)
+libsplit : no
+setup      : |
+    ln -s /usr/bin/rcc-qt4 /usr/bin/rcc
+    %cmake  .
+build      : |
+    %make
+install    : |
+    %make_install
